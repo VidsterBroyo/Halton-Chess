@@ -104,6 +104,17 @@ function automateTeams() {
 
 
 function createRounds() {
+
+    // randomize teams
+    for (i = 0; i < teams.length; i++) {
+        index = Math.floor(Math.random() * teams.length)
+        oldTeam = teams[index]
+        teams[index] = teams[i]
+        teams[i] = oldTeam
+    }
+    
+
+
     // if even # of teams, # of rounds will be length - 1
     // else, # of rounds will be length
     rounds = []
