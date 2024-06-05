@@ -1,0 +1,24 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "goated halton chess website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "goated"
+  ],
+  "author": "vidsterbroyo",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.2",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5"
+  }
+}
