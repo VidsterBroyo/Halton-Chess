@@ -688,8 +688,6 @@ function confirmPairings() {
         console.log(currentPairings[edits[i]])
     }
 
-    edits = []
-
 
 
     // call display pairings again to make the table update

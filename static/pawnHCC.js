@@ -104,17 +104,6 @@ function automateTeams() {
 
 
 function createRounds() {
-
-    // randomize teams
-    for (i = 0; i < teams.length; i++) {
-        index = Math.floor(Math.random() * teams.length)
-        oldTeam = teams[index]
-        teams[index] = teams[i]
-        teams[i] = oldTeam
-    }
-    
-
-
     // if even # of teams, # of rounds will be length - 1
     // else, # of rounds will be length
     rounds = []
@@ -233,7 +222,7 @@ function createIndividualPairings() {
 function displayTeamPairings(index) {
     currentRoundNumber = index
 
-    if (currentRoundNumber == rounds.length - 1) {
+    if (currentRoundNumber == rounds.length-1){
         document.getElementById("winnerButton").style.display = "block"
     } else {
         document.getElementById("winnerButton").style.display = "none"
@@ -294,7 +283,7 @@ function displayTeamPairings(index) {
 
 function displayIndividualPairings(round, pair) {
     console.log("displaying individual pairings...")
-
+    
     currentPairNumber = pair
 
     document.getElementById("pairingsMenu").style.display = "none"
@@ -322,30 +311,19 @@ function displayIndividualPairings(round, pair) {
 
         // check that the pairing isn't a bye
         if (isNaN(currentPairings[i][0]) && isNaN(currentPairings[i][1])) {
-
-            if (i % 2 == 0) {
-                tableBody += `<tr>
-                                <td scope="col"><button onclick="playerAbsent(${i}, ${0})">X</button></th>
-                                <td><span style="background-color: ${color[currentPairings[i][2] * 2]}">${currentPairings[i][0]}</td>
-                                <td><button onclick='handleOutcome(1, ${i}); updatePoints(${round}, ${pair})' class="whiteButton"><</button><button onclick='handleOutcome("draw", ${i}); updatePoints(${round}, ${pair})'>O</button><button onclick='handleOutcome(2, ${i}); updatePoints(${round}, ${pair})' class="blackButton">></button></td>
-                                <td><span style="background-color: ${color[2 - currentPairings[i][2] * 2]}">${currentPairings[i][1]}</span></td>
-                                <td scope="col"><button onclick="playerAbsent(${i}, ${1})">X</button></th>
-                            </tr>`
-            } else {
-                tableBody += `<tr>
-                                    <td scope="col"><button onclick="playerAbsent(${i}, ${0})">X</button></th>
-                                    <td><span style="background-color: ${color[currentPairings[i][2] * 2]}">${currentPairings[i][0]}</td>
-                                    <td><button onclick='handleOutcome(1, ${i}); updatePoints(${round}, ${pair})' class="blackButton"><</button><button onclick='handleOutcome("draw", ${i}); updatePoints(${round}, ${pair})'>O</button><button onclick='handleOutcome(2, ${i}); updatePoints(${round}, ${pair})' class="whiteButton">></button></td>
-                                    <td><span style="background-color: ${color[2 - currentPairings[i][2] * 2]}">${currentPairings[i][1]}</span></td>
-                                    <td scope="col"><button onclick="playerAbsent(${i}, ${1})">X</button></th>
-                                </tr>`
-            }
+            tableBody += `<tr>
+                            <td scope="col"><button onclick="playerAbsent(${i}, ${0})">X</button></th>
+                            <td><span style="background-color: ${color[currentPairings[i][2] * 2]}">${currentPairings[i][0]}</td>
+                            <td><button onclick='handleOutcome(1, ${i}); updatePoints(${round}, ${pair})' class="whiteButton"><</button><button onclick='handleOutcome("draw", ${i}); updatePoints(${round}, ${pair})'>O</button><button onclick='handleOutcome(2, ${i}); updatePoints(${round}, ${pair})' class="blackButton">></button></td>
+                            <td><span style="background-color: ${color[2 - currentPairings[i][2] * 2]}">${currentPairings[i][1]}</span></td>
+                            <td scope="col"><button onclick="playerAbsent(${i}, ${1})">X</button></th>
+                        </tr>`
 
         }
 
         // otherwise it is a bye
         else {
-            if (isNaN(currentPairings[i][0])) {
+            if (isNaN(currentPairings[i][0])){
                 tableBody += `<tr>
                                 <td scope="col"><button onclick="playerAbsent(${i}, ${0})">X</button></td>
                                 <td><span>${currentPairings[i][0]}</span></td>
@@ -363,7 +341,7 @@ function displayIndividualPairings(round, pair) {
                                 <td scope="col"><button onclick="playerAbsent(${i}, ${1})">X</button></td>
                             </tr>`
             }
-
+            
         }
     }
 
@@ -382,21 +360,21 @@ function displayIndividualPairings(round, pair) {
 }
 
 
-function playerAbsent(player, team) {
+function playerAbsent(player, team){
     console.log(rounds[currentRoundNumber][currentPairNumber][2][player][team] + " is absent")
 
     rounds[currentRoundNumber][currentPairNumber][2][player][team] = 0
 
     console.log(rounds[currentRoundNumber][currentPairNumber][2])
 
-    for (i = player; i < 3; i++) {
+    for (i = player; i < 3; i++){
         console.log(rounds[currentRoundNumber][currentPairNumber][2][i])
-        rounds[currentRoundNumber][currentPairNumber][2][i][team] = rounds[currentRoundNumber][currentPairNumber][2][i + 1][team]
+        rounds[currentRoundNumber][currentPairNumber][2][i][team] =  rounds[currentRoundNumber][currentPairNumber][2][i+1][team]
     }
     rounds[currentRoundNumber][currentPairNumber][2][3][team] = 0
 
     console.log(rounds[currentRoundNumber][currentPairNumber][2])
-    displayIndividualPairings(currentRoundNumber, currentPairNumber)
+    displayIndividualPairings(currentRoundNumber, currentPairNumber) 
 }
 
 
@@ -466,7 +444,7 @@ function back() {
     findMatchPoints()
     updateStandings()
     displayTeamPairings(currentRoundNumber)
-}
+} 
 
 
 function findMatchPoints() {
@@ -492,17 +470,17 @@ function findMatchPoints() {
 
     // check if all rounds have been accounted for
     if (rounds[currentRoundNumber][currentPairNumber][0].roundScores[currentRoundNumber] + rounds[currentRoundNumber][currentPairNumber][1].roundScores[currentRoundNumber] >= sum) {
-
+       
         // if team 1 won
         if (rounds[currentRoundNumber][currentPairNumber][0].roundScores[currentRoundNumber] > rounds[currentRoundNumber][currentPairNumber][1].roundScores[currentRoundNumber]) {
             rounds[currentRoundNumber][currentPairNumber][0].matchPoints[currentRoundNumber] = 1
         }
-
+        
         // if team 2 won
         else if (rounds[currentRoundNumber][currentPairNumber][0].roundScores[currentRoundNumber] < rounds[currentRoundNumber][currentPairNumber][1].roundScores[currentRoundNumber]) {
             rounds[currentRoundNumber][currentPairNumber][1].matchPoints[currentRoundNumber] = 1
         }
-
+        
         // if it was a tie
         else {
             rounds[currentRoundNumber][currentPairNumber][0].matchPoints[currentRoundNumber] = 0.5
@@ -521,7 +499,7 @@ function updateStandings() {
     console.log("updating standings...")
 
     // sort teams by score
-    teams.sort(function (a, b) {
+    teams.sort(function(a, b) {
         return parseFloat(b.score) - parseFloat(a.score);
     })
 
@@ -543,14 +521,14 @@ function findWinner() {
     winners = []
 
     // sort teams by score
-    teams.sort(function (a, b) {
+    teams.sort(function(a, b) {
         return parseFloat(b.score) - parseFloat(a.score);
     })
 
     save()
 
-    for (i = 0; i < teams.length; i++) {
-        if (teams[i].score == teams[0].score) {
+    for (i = 0; i < teams.length; i++){
+        if (teams[i].score == teams[0].score){
             winners.push(teams[i])
         } else {
             break
@@ -558,7 +536,7 @@ function findWinner() {
     }
 
     console.log(winners)
-    if (winners.length == 1) {
+    if (winners.length == 1){
         alert(winners[0].teamName + " won!!!!!!! ")
     } else {
         alert("tie between " + winners)
