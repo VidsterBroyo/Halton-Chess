@@ -135,60 +135,45 @@ td > span{
 
 #img1 {
     object-position: 50% 20%;
-    size: 50%;
+    size: 70%;
 }
 
 #img2 {
     object-position: 50% 30%;
+    size: 70%;
 }
 
 #img3 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img4 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img5 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img6 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img7 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img8 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img9 {
     object-position: 0% 5%;
+    size: 70%;
 }
 #img10 {
     object-position: 0% 5%;
-}
-
-#img4 {
-    object-position: 0% 5%;
-}
-
-#img5 {
-    object-position: 0% 5%;
-}
-
-#img6 {
-    object-position: 0% 5%;
-}
-
-#img7 {
-    object-position: 0% 5%;
-}
-
-#img8 {
-    object-position: 0% 5%;
-}
-
-#img9 {
-    object-position: 0% 5%;
+    size: 70%;
 }
 
 .card-header, .card-footer {
