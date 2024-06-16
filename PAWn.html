@@ -47,12 +47,15 @@
     </header>
 
     <div class="mt-4 mb-1 text-black rounded">
-      <h1 class="title">PAWN</h1>
-      <h3 style="text-align: center;">Pairing Algorithm Wizard Network</h3>
+      <h1 class="title">PAWn</h1>
+      <h3 class="text-center">Pairing Algorithm Wizard</h3>
     </div>
     <br>
 
     <div id="addPlayers">
+      
+      <p  class="text-center lead"><a style="color: #81B64C" href="/PAWnHCC">PAWn for team competitions</a></p>
+
       <table class="table">
         <thead>
           <tr>
@@ -85,7 +88,8 @@
       </table>
 
       <button onclick="addPlayer()">Add player</button>
-      <button onclick="automatePlayers()">Automate Players</button>
+      <!-- <button onclick="automatePlayers()">Automate Players</button> -->
+      <button onclick="createFirstPairings()">Create Pairings</button>
     </div>
 
 
@@ -118,7 +122,7 @@
       
       <div id="next">
         <button id="nextPairingsButton" onclick="makeNextPairings()">Create Next Pairings</button>
-        <button id="save" onclick="save()">Finish + Save Tournament Data</button>
+        <!-- <button id="save" onclick="save()">Finish + Save Tournament Data</button> -->
       </div>
 
       <hr><br>

@@ -525,7 +525,7 @@ function findWinner() {
         return parseFloat(b.score) - parseFloat(a.score);
     })
 
-    save()
+    // save()
 
     for (i = 0; i < teams.length; i++){
         if (teams[i].score == teams[0].score){

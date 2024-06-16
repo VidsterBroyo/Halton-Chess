@@ -134,18 +134,15 @@ td > span{
 }
 
 #img1 {
-    object-position: 50% 30%;
+    object-position: 50% 70%;
 }
 
 #img2 {
-    object-position: 50% 30%;
+    object-position: 50% 80%;
 }
 
-#img3 {
-    object-position: 50% 30%;
-}
 #img4 {
-    object-position: 50% 30%;
+    object-position: 80% 80%;
 }
 #img5 {
     object-position: 50% 30%;
@@ -154,17 +151,15 @@ td > span{
     object-position: 50% 30%;
 }
 #img7 {
-    object-position: 50% 30%;
+    object-position: 50% 50%;
 }
 #img8 {
     object-position: 50% 30%;
 }
 #img9 {
-    object-position: 50% 30%;
+    object-position: 50% 70%;
 }
-#img10 {
-    object-position: 50% 30%;
-}
+
 
 .card-header, .card-footer {
     background-color: #eeeed2;
@@ -202,4 +197,8 @@ image {
 
 #button {
     width: 20%;
+}
+
+#addPlayers, #setup {
+    height: calc(80vh - 150px);
 }
